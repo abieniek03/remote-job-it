@@ -1,4 +1,4 @@
-import { LiaHandPointRightSolid } from "react-icons/Lia";
+import { LiaHandPointRightSolid } from "react-icons/lia";
 
 interface Steper {
 	step: number;
