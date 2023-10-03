@@ -17,6 +17,22 @@ const config: Config = {
 				"secondary-shadow": "#454c6e",
 				content: "#1f1f1f",
 			},
+			keyframes: {
+				"header-text": {
+					from: { opacity: "0", transform: "translateY(200px)" },
+					to: { opacity: "1", transform: "translateY(0)" },
+				},
+
+				"header-image": {
+					from: { opacity: "0" },
+					to: { opacity: "1" },
+				},
+			},
+
+			animation: {
+				"header-text": "header-text 2s",
+				"header-image": "header-image 3s 0.5s forwards",
+			},
 		},
 	},
 	plugins: [],
