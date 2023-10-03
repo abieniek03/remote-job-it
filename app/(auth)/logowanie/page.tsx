@@ -27,7 +27,7 @@ export default function LoginPage() {
 
 	return (
 		<>
-			<div className="text-center font-bold mb-10">
+			<div className="text-center font-bold mb-8">
 				<h1 className="text-primary text-4xl mb-2">Witaj ponownie!</h1>
 				<p>Zaloguj się do swojego konta, aby kontynuować.</p>
 			</div>
@@ -37,7 +37,7 @@ export default function LoginPage() {
 						<FormInput type="email" id="email" label="Adres mailowy" />
 						<FormInput type="password" id="password" label="Hasło" />
 						<div className="flex justify-between items-center">
-							<Link href={"/"} className="text-primary text-sm hover:underline">
+							<Link href={"/odzyskiwanie"} className="text-primary text-sm hover:underline">
 								Nie pamiętam hasła{" "}
 							</Link>
 							<Button label="Zaloguj" />

@@ -27,7 +27,7 @@ export default function RegisterPage() {
 
 	return (
 		<>
-			<div className="text-center font-bold mb-10">
+			<div className="text-center font-bold mb-8">
 				<h1 className="text-primary text-4xl mb-2">Dołącz do naszej społeczności</h1>
 				<p>Załóż swoje konto wypełniając formularz.</p>
 			</div>
