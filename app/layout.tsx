@@ -16,12 +16,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="pl" className="scroll-smooth">
-			<Head>
-				<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-				<style>
-					<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-				</style>
-			</Head>
 			<body className={`${font.className} text-content overflow-x-hidden`}>
 				<AOSProvider>{children}</AOSProvider>
 			</body>
