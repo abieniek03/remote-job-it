@@ -8,7 +8,7 @@ interface Steper {
 
 export default function Steper({ step, title, description }: Steper) {
 	return (
-		<div className="relative w-full flex flex-col md:flex-row md:items-center" data-aos="fade-right">
+		<div className="relative w-full text-secondary flex flex-col md:flex-row md:items-center" data-aos="fade-right">
 			<span className="font-bold text-6xl mb-2 md:mb-0 md:mr-4 w-full max-w-[80px]">
 				{step < 9 ? `0${step}` : step}
 			</span>

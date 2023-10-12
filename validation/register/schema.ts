@@ -20,13 +20,15 @@ export const registerFormSchema = z
 		email: z.string().email({ message: registerFormMessage.email.valid }),
 
 		password: passwordSchema,
-		repassword: z.string().min(1, { message: registerFormMessage.repassword.require }),
+		rePassword: z
+			.string({ required_error: registerFormMessage.rePassword.require })
+			.min(1, { message: registerFormMessage.rePassword.require }),
 	})
-	.superRefine(({ repassword, password }, ctx) => {
-		if (repassword !== password) {
+	.superRefine(({ rePassword, password }, ctx) => {
+		if (rePassword !== password) {
 			ctx.addIssue({
 				code: "custom",
-				message: registerFormMessage.repassword.same,
+				message: registerFormMessage.rePassword.same,
 				path: ["rePassword"],
 			});
 		}

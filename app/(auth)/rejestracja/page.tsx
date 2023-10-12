@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 
 import FormInput from "@/components/FormInput/FormInput";
@@ -12,7 +13,11 @@ import { IRegisterForm } from "@/validation/register/types";
 import { defaultRegisterForm } from "@/validation/register/default";
 import { registerFormSchema } from "@/validation/register/schema";
 
+import axios from "axios";
+
 export default function RegisterPage() {
+	const [loading, setLoading] = useState<boolean>(false);
+
 	const form = useForm<IRegisterForm>({
 		resolver: zodResolver(registerFormSchema),
 		defaultValues: defaultRegisterForm,
@@ -20,9 +25,19 @@ export default function RegisterPage() {
 		reValidateMode: "onChange",
 	});
 
-	function handleRegister(data: IRegisterForm) {
+	async function handleRegister(data: IRegisterForm) {
 		console.log("Dane formularza logowania:");
 		console.log(data);
+
+		try {
+			setLoading(true);
+			const response = await axios.post("/api/auth/register", data);
+			console.log("Register success", response.data);
+		} catch (error: any) {
+			console.log("Register failed", error.message);
+		} finally {
+			setLoading(false);
+		}
 	}
 
 	return (
@@ -37,7 +52,7 @@ export default function RegisterPage() {
 						<FormInput type="email" id="email" label="Adres mailowy" />
 						<FormInput type="password" id="password" label="Hasło" />
 						<FormInput type="password" id="rePassword" label="Powtórz hasło" />
-						<Button label="Zarejestruj się" wFull={true} />
+						<Button label="Zarejestruj się" wFull={true} loading={loading} loadingLabel="Rejestracja..." />
 					</form>
 				</FormProvider>
 				<hr className="mt-8 mb-6 border-neutral-300" />
