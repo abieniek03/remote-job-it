@@ -18,8 +18,6 @@ export default function HelloPage() {
 				<p>{userData?.email}</p>
 				<Button label="Wyloguj się" onClick={handleLogout} />
 			</div>
-
-			{/* <p>{userData.email}</p> */}
 		</main>
 	);
 }
