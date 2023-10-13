@@ -6,6 +6,8 @@ import { cookies } from "next/headers";
 import AOSProvider from "@/hoc/AOSProvider";
 import ReduxProvider from "@/hoc/ReduxProvider";
 import Authentication from "@/hoc/Authentication";
+import Navbar from "@/components/Navbar/Navbar";
+
 const font = Poppins({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata: Metadata = {

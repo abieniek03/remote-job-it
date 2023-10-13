@@ -1,7 +1,9 @@
 "use client";
 
 import Button from "@/components/Button/Button";
+
 import { useAppSelector } from "@/store/store";
+
 import axios from "axios";
 
 export default function HelloPage() {
@@ -12,12 +14,8 @@ export default function HelloPage() {
 	const userData = useAppSelector((store: any) => store.user.details?.user);
 
 	return (
-		<main>
-			<div className="h-screen flex flex-col justify-center items-center">
-				<h1>Siema</h1>
-				<p>{userData?.email}</p>
-				<Button label="Wyloguj się" onClick={handleLogout} />
-			</div>
-		</main>
+		<div className="mt-24 flex flex-col justify-center items-center">
+			<h1 className="font-bold text-3xl md:text-4xl lg:text-5xl">Witaj na naszym portalu!</h1>
+		</div>
 	);
 }
