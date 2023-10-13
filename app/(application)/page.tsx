@@ -14,7 +14,6 @@ import Footer from "@/components/Footer/Footer";
 export default function Home() {
 	return (
 		<>
-			<Navbar />
 			<header className="lg:mt-10 overflow-hidden">
 				<div className="w-full sm:flex sm:justify-between sm:items-center max-w-8xl mx-auto sm:p-8 sm:gap-5 max-w-[1400px] mb-20 sm:mb-0">
 					<div className="mt-10 sm:mt-0 p-2 sm:p-0 text-center sm:text-left max-w-xl lg:max-w-2xl animate-header-text">
