@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { use, useState } from "react";
 import Link from "next/link";
 
 import Logo from "../Logo/Logo";
@@ -21,7 +21,9 @@ export default function Navbar() {
 		setIsOpenMenu(!isOpenMenu);
 	}
 
-	const user = useAppSelector((store) => store.user.details);
+	const store = useAppSelector((store) => store);
+	const user = store.user.details;
+	console.log(user);
 
 	return (
 		<nav className="py-4">
